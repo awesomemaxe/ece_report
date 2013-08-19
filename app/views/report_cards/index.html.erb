@@ -1,7 +1,7 @@
 <h1>Report card</h1>
 
 
-<h2>1.How many in MS/MEng program right now?</h2>
+<h2>1.Students in MS/MEng program.</h2>
 
 <font size = "4">PhD</font>
 <table frame="box">
@@ -15,7 +15,7 @@
             <td align="center">Last Name</td>
             <td align="center">First Name</td>
             <td align="center">International</td>
-            <td align="center">Start date</td>
+            <td align="center">Cohort</td>
           </tr>
         </thead>
 
@@ -26,7 +26,7 @@
               <td align="center"><%= pbphdee.last_name %></td>
               <td align="center"><%= pbphdee.first_name %></td>
               <td align="center"><%= pbphdee.international %></td>
-              <td align="center"><%= pbphdee.start_date %></td>
+              <td align="center"><%= pbphdee.cohort %></td>
               <% @pb_phd_ee_count = @pb_phd_ee_count+1 %>
             </tr>
           <% end %>
@@ -44,7 +44,7 @@
             <td align="center">Last Name</td>
             <td align="center">First Name</td>
             <td align="center">International</td>
-            <td align="center">Start date</td>
+            <td align="center">Cohort</td>
           </tr>
         </thead>
 
@@ -55,7 +55,7 @@
               <td align="center"><%= pmphdee.last_name %></td>
               <td align="center"><%= pmphdee.first_name %></td>
               <td align="center"><%= pmphdee.international %></td>
-              <td align="center"><%= pmphdee.start_date %></td>
+              <td align="center"><%= pmphdee.cohort %></td>
               <% @pm_phd_ee_count = @pm_phd_ee_count+1 %>
             </tr>
           <% end %>
@@ -73,7 +73,7 @@
             <td align="center">Last Name</td>
             <td align="center">First Name</td>
             <td align="center">International</td>
-            <td align="center">Start date</td>
+            <td align="center">Cohort</td>
           </tr>
         </thead>
 
@@ -84,7 +84,7 @@
               <td align="center"><%= pbphdce.last_name %></td>
               <td align="center"><%= pbphdce.first_name %></td>
               <td align="center"><%= pbphdce.international %></td>
-              <td align="center"><%= pbphdce.start_date %></td>
+              <td align="center"><%= pbphdce.cohort %></td>
               <% @pb_phd_ce_count = @pb_phd_ce_count+1 %>
             </tr>
           <% end %>
@@ -101,7 +101,7 @@
             <td align="center">Last Name</td>
             <td align="center">First Name</td>
             <td align="center">International</td>
-            <td align="center">Start date</td>
+            <td align="center">Cohort</td>
           </tr>
         </thead>
 
@@ -112,7 +112,7 @@
               <td align="center"><%= pmphdce.last_name %></td>
               <td align="center"><%= pmphdce.first_name %></td>
               <td align="center"><%= pmphdce.international %></td>
-              <td align="center"><%= pmphdce.start_date %></td>
+              <td align="center"><%= pmphdce.cohort %></td>
               <% @pm_phd_ce_count = @pm_phd_ce_count+1 %>
             </tr>
           <% end %>
@@ -124,7 +124,193 @@
 </table>
 </br>
   <font size="4">Total number of PhD students: <%= @phd_count = @pb_phd_ee_count+@pm_phd_ee_count+@pb_phd_ce_count+@pm_phd_ce_count%> </font></br></br></br>
-<font size= "4">Master</font>
+
+
+<font size= "4">Master MEng</font>
+<table frame="box">
+  <tr>
+    <td class="box3_t" align="center" valign="top">
+      <font size="3">MEng CE</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @mengce.each do |mengce| %>
+            <tr>
+              <td align="center"><%= mengce.UID %></td>
+              <td align="center"><%= mengce.last_name %></td>
+              <td align="center"><%= mengce.first_name %></td>
+              <td align="center"><%= mengce.specialization %></td>
+              <td align="center"><%= mengce.cohort %></td>
+              <% @meng_ce_count = @meng_ce_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <font size="3">Total number : <%= @meng_ce_count %></font>
+    </td>
+
+    <td class="box3_t" align="center"  valign="top">
+      <font size="3">MEng EE</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @mengee.each do |mengee| %>
+            <tr>
+              <td align="center"><%= mengee.UID %></td>
+              <td align="center"><%= mengee.last_name %></td>
+              <td align="center"><%= mengee.first_name %></td>
+              <td align="center"><%= mengee.specialization %></td>
+              <td align="center"><%= mengee.cohort %></td>
+              <% @meng_ee_count = @meng_ee_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+            <font size="3">Total number : <%= @meng_ee_count %> </font>
+    </td>
+
+    <td class="box3_t" align="center"  valign="top">
+      <font size="3">MEng PhD</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @mengphd.each do |mengphd| %>
+            <tr>
+              <td align="center"><%= mengphd.UID %></td>
+              <td align="center"><%= mengphd.last_name %></td>
+              <td align="center"><%= mengphd.first_name %></td>
+              <td align="center"><%= mengphd.specialization %></td>
+              <td align="center"><%= mengphd.cohort %></td>
+              <% @meng_phd_count = @meng_phd_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <font size="3">Total number : <%= @meng_phd_count %> </font>
+    </td>
+
+  </tr>
+</table>
+</br>
+<font size= "4">Master MS</font>
+<table frame="box">
+  <tr>
+    <td class="box3_t" align="center"  valign="top">
+      <font size="3">MS CE</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @msce.each do |msce| %>
+            <tr>
+              <td align="center"><%= msce.UID %></td>
+              <td align="center"><%= msce.last_name %></td>
+              <td align="center"><%= msce.first_name %></td>
+              <td align="center"><%= msce.specialization %></td>
+              <td align="center"><%= msce.cohort %></td>
+              <% @ms_ce_count = @ms_ce_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+            <font size="3">Total number : <%= @ms_ce_count %> </font>
+    </td>
+    <td class="box3_t" align="center"  valign="top">
+      <font size="3">MS EE</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @msee.each do |msee| %>
+            <tr>
+              <td align="center"><%= msee.UID %></td>
+              <td align="center"><%= msee.last_name %></td>
+              <td align="center"><%= msee.first_name %></td>
+              <td align="center"><%= msee.specialization %></td>
+              <td align="center"><%= msee.cohort %></td>
+              <% @ms_ee_count = @ms_ee_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+            <font size="3">Total number : <%= @ms_ee_count %> </font>
+    </td>
+    <td class="box3_t" align="center"  valign="top">
+      <font size="3">MS PhD</font>
+      <table border="1">
+        <thead>
+          <tr>
+            <td align="center">UID</td>
+            <td align="center">Last Name</td>
+            <td align="center">First Name</td>
+            <td align="center">Specialization</td>
+            <td align="center">Cohort</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @msphd.each do |msphd| %>
+            <tr>
+              <td align="center"><%= msphd.UID %></td>
+              <td align="center"><%= msphd.last_name %></td>
+              <td align="center"><%= msphd.first_name %></td>
+              <td align="center"><%= msphd.specialization %></td>
+              <td align="center"><%= msphd.cohort %></td>
+              <% @ms_phd_count = @ms_phd_count+1 %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+            <font size="3">Total number : <%= @ms_phd_count %> </font>
+    </td>
+  </tr>
+</table>
+
+</br>
+  <font size="4">Total number of Master students: <%= @ms_count = @meng_ce_count+@meng_ee_count+@meng_phd_count+@ms_ce_count+@ms_ee_count+@ms_phd_count%> </font></br></br></br>
 
 <h2>2.How many are graduating this semester and who?<h2>
 

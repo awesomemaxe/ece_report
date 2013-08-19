@@ -36,8 +36,9 @@ class ReportCardsController < ApplicationController
   # GET /report_cards.json
   def index
     @report_cards = ReportCard.all
+
+    # api from ecephd
     @pbphdees = Student.find(:all, :params => {:degree=> 'pb-phd-ee'})
-  
         @pb_phd_ee_count = 0;
 
     @pmphdees = Student.find(:all, :params => {:degree=> 'pm-phd-ee'})
@@ -48,7 +49,30 @@ class ReportCardsController < ApplicationController
 
     @pmphdces = Student.find(:all, :params => {:degree=> 'pm-phd-ce'})
         @pm_phd_ce_count = 0;
-        @phd_count = 0
+
+        @phd_count = 0;
+
+    # api from ecems
+
+    @mengce = Msstudent.find(:all, :params => {:degree=> 'MEng-ce'})
+        @meng_ce_count = 0;
+
+    @mengee = Msstudent.find(:all, :params => {:degree=> 'MEng-ee'})
+        @meng_ee_count = 0;
+
+    @mengphd = Msstudent.find(:all, :params => {:degree=> 'MEng-phd'})
+        @meng_phd_count = 0;
+
+    @msce = Msstudent.find(:all, :params => {:degree=> 'MS-ce'})
+        @ms_ce_count = 0;
+
+    @msee = Msstudent.find(:all, :params => {:degree=> 'MS-ce'})
+        @ms_ee_count = 0;
+
+    @msphd = Msstudent.find(:all, :params => {:degree=> 'MS-phd'})
+        @ms_phd_count = 0;
+
+        @ms_count = 0;
 
   end
 
